@@ -55,15 +55,15 @@ int main() {
             aGrades[aCount] = scores[i];
             ++aCount;
         }
-        else if (scores[i] >= 80 && scores[i] <= 89) {
+        else if (scores[i] >= 80) {
             bGrades[bCount] = scores[i];
             ++bCount;
         }
-        else if (scores[i] >= 70 && scores[i] <= 79) {
+        else if (scores[i] >= 70) {
             cGrades[cCount] = scores[i];
             ++cCount;
         }
-        else if (scores[i] >= 60 && scores[i] <= 69) {
+        else if (scores[i] >= 60) {
             dGrades[dCount] = scores[i];
             ++dCount;
         }
@@ -95,28 +95,28 @@ int main() {
     cout << endl << endl;
 
     // One while loop. If scores[i] is under 60, print:
-    int index = 0;
-    int indices[N];
+    int student = 0;
+    int dScores[N];
     int i = 0;
     // Put ++i in the loop or it never ends.
     while (i < N) {
         if (scores[i] < 60) {
-            indices[index] = i;
-            ++index;
+            dScores[student] = i;
+            ++student;
         }
         ++i;
     }
     // Student at index i needs to come to office hours.
     cout << endl << "Students at indicies ";
-    for (int i = 0; i < index; ++i) {
+    for (int i = 0; i < student; ++i) {
         if (i == 0) {
-            cout << indices[i];
+            cout << dScores[i];
         }
-        else if (i == index - 1) {
-            cout << " and " << indices[i];
+        else if (i == student - 1) {
+            cout << " and " << dScores[i];
         }
         else {
-            cout << ", " << indices[i];
+            cout << ", " << dScores[i];
         }
     }
     cout << " need to come in to office hours!";
